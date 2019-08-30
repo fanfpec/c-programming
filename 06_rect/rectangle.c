@@ -16,14 +16,80 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
+struct rect_tag {
+  int x;
+  int y;
+  int width;
+  int height;
+};
+typedef struct rect_tag rectangle;
 
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
+  //if (r.width < 0 && r.height < 0){
+  if (r.width < 0){
+    r.width = (-1) * r.width;
+    r.x  = r.x - r.width;
+  }
+  if (r.height < 0){
+    r.height = (-1) * r.height;
+    r.y = r.y - r.height;
+  }
   return r;
 }
+
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+  rectangle r;
+  // no overlap
+  if ((( r1.y + r1.height < r2.y) && (r1.y < r2.y ) )|| ((r1.x + r1.width < r2.x) && (r1.x < r2.x))
+      || ((r2.y + r2.height < r1.y) && ( r2.y < r1.y)) || ((r2.x + r2.width < r1.x) && (r2.x < r1.x))){
+    r.x = r1.x;
+    r.y = r1.y;
+    r.height = 0;
+    r.width = 0;
+    return r;
+  }else {
+    r.x = max (r1.x , r2.x);
+    r.y = max (r1.y , r2.y);
+    if ( r1.x ==  r2.x && r1.y == r2.y && r1.height == r2. height && r1.width ==r2.width){
+      return r1;
+    }else if ( r2.y >= r1.y && (r1.y + r1.height >= r2.y + r2.height)){
+      //fully overlapped, r2 smaller   
+      r.height = r2.height; 
+      //r.height = r2.height - (max (r1.height + r1.y, r2.height + r2.y) - min (r1.height + r1.y, r2.height + r2.y));
+    }else if (r1.y >= r2.y && (r1.y + r1.height <= r2.y + r2.height )){
+      //fully overlapped, r1 is smaller 
+      r.height = r1.height;
+    }else if ( r1.y + r1.height == r2.y || r2.y + r2.height == r1.y){
+      r.height = 0;
+    }else if (r1.y < r2.y) {
+      //partial overlapped, r2 higher
+      r.height = r1.height + r1.y - r2.y; 
+    }else if (r1.y > r2.y) {
+      //partial overlapped, r1 higher
+      r.height = r2.height + r2.y - r1.y;
+    }
+
+    if ( r1.x < r2.x && (r1.x + r1.width >= r2.x + r2.width )){
+      //fully overlapped, r2 smaller
+      r.width = r2.width;
+    }else if ( r1.x > r2.x && (r1.x + r1.width <= r2.x + r2.width )){
+      //fully overlapped, r1 is smaller
+      r.width = r1.width;
+    }else if ( r1.x + r1.width == r2.x || r2.x + r2.width == r1.x){
+      r.width = 0;
+    }else if (r1.x < r2.x) {
+      //partial overlapped, r1 is on the left
+      r.width = r1.x + r1.width - r2.x;
+    }else if (r1.x > r2.x) {
+      //partial overlapped, r2 is on the left
+      r.width = r2.x + r2.width - r1.x;
+    }
+    return r; 
+  }
   return r1;
 }
 
