@@ -28,12 +28,12 @@ rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
   //if (r.width < 0 && r.height < 0){
   if (r.width < 0){
-    r.width = (-1) * r.width;
-    r.x  = r.x - r.width;
+    r.width *= -1;
+    r.x  -= r.width;
   }
   if (r.height < 0){
-    r.height = (-1) * r.height;
-    r.y = r.y - r.height;
+    r.height *= -1;
+    r.y -= r.height;
   }
   return r;
 }
@@ -48,8 +48,8 @@ rectangle intersection(rectangle r1, rectangle r2) {
   //    || ((r2.y + r2.height < r1.y) && ( r2.y < r1.y)) || ((r2.x + r2.width < r1.x) && (r2.x < r1.x))){
   if (( r1.y + r1.height < r2.y )|| (r1.x + r1.width < r2.x)|| (r2.y + r2.height < r1.y ) || (r2.x + r2.width < r1.x)){
     //no overlap
-    r.x = r1.x;
-    r.y = r1.y;
+    r.x = 0;
+    r.y = 0;
     r.height = 0;
     r.width = 0;
     return r;
@@ -61,38 +61,40 @@ rectangle intersection(rectangle r1, rectangle r2) {
 
   r.x = max (r1.x , r2.x);
   r.y = max (r1.y , r2.y);
-  if ( r1.y + r1.height == r2.y || r2.y + r2.height == r1.y){
-    r.height = 0;
-  }else if ( r2.y >= r1.y && (r1.y + r1.height >= r2.y + r2.height)){
+  //if ( r1.y + r1.height == r2.y || r2.y + r2.height == r1.y){
+  //  r.height = 0;
+  //}else if ( r2.y >= r1.y && (r1.y + r1.height >= r2.y + r2.height)){
       //fully overlapped, r2 smaller   
-      r.height = r2.height; 
+  //     r.height = r2.height; 
       //r.height = r2.height - (max (r1.height + r1.y, r2.height + r2.y) - min (r1.height + r1.y, r2.height + r2.y));
-    }else if (r1.y >= r2.y && (r1.y + r1.height <= r2.y + r2.height )){
+  //  }else if (r1.y >= r2.y && (r1.y + r1.height <= r2.y + r2.height )){
       //fully overlapped, r1 is smaller 
-      r.height = r1.height;
-    }else if (r1.y < r2.y) {
+  //    r.height = r1.height;
+  //  }else if (r1.y < r2.y) {
       //partial overlapped, r2 higher
-      r.height = r1.height + r1.y - r2.y; 
-    }else if (r1.y > r2.y) {
+  //    r.height = r1.height + r1.y - r2.y; 
+  //  }else if (r1.y > r2.y) {
       //partial overlapped, r1 higher
-      r.height = r2.height + r2.y - r1.y;
-    }
+  //    r.height = r2.height + r2.y - r1.y;
+  //  }
 
-  if ( r1.x + r1.width == r2.x || r2.x + r2.width == r1.x){
-    r.width = 0;
-  }else if ( r1.x < r2.x && (r1.x + r1.width >= r2.x + r2.width )){
+  //if ( r1.x + r1.width == r2.x || r2.x + r2.width == r1.x){
+  //  r.width = 0;
+  //}else if ( r1.x < r2.x && (r1.x + r1.width >= r2.x + r2.width )){
       //fully overlapped, r2 smaller
-      r.width = r2.width;
-    }else if ( r1.x > r2.x && (r1.x + r1.width <= r2.x + r2.width )){
+  //    r.width = r2.width;
+  //  }else if ( r1.x > r2.x && (r1.x + r1.width <= r2.x + r2.width )){
       //fully overlapped, r1 is smaller
-      r.width = r1.width;
-    }else if (r1.x < r2.x) {
+  //    r.width = r1.width;
+  //  }else if (r1.x < r2.x) {
       //partial overlapped, r1 is on the left
-      r.width = r1.x + r1.width - r2.x;
-    }else if (r1.x > r2.x) {
+  //    r.width = r1.x + r1.width - r2.x;
+  //  }else if (r1.x > r2.x) {
       //partial overlapped, r2 is on the left
-      r.width = r2.x + r2.width - r1.x;
-    }
+  //    r.width = r2.x + r2.width - r1.x;
+  //  }
+  r.width = min(r1.x + r1.width, r2.x + r2.width) - r.x;
+  r.height = min(r1.y + r1.height, r2.y + r2.height) - r.y;
     return r; 
 }
 
