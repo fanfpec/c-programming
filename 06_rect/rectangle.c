@@ -46,18 +46,21 @@ rectangle intersection(rectangle r1, rectangle r2) {
   // no overlap
   //  if ((( r1.y + r1.height < r2.y) && (r1.y < r2.y ) )|| ((r1.x + r1.width < r2.x) && (r1.x < r2.x))
   //    || ((r2.y + r2.height < r1.y) && ( r2.y < r1.y)) || ((r2.x + r2.width < r1.x) && (r2.x < r1.x))){
-  if ((( r1.y + r1.height < r2.y ))|| ((r1.x + r1.width < r2.x))|| ((r2.y + r2.height < r1.y)) || ((r2.x + r2.width < r1.x))){
+  if (( r1.y + r1.height < r2.y )|| (r1.x + r1.width < r2.x)|| (r2.y + r2.height < r1.y ) || (r2.x + r2.width < r1.x)){
+    //no overlap
     r.x = r1.x;
     r.y = r1.y;
     r.height = 0;
     r.width = 0;
     return r;
-  }else {
-    r.x = max (r1.x , r2.x);
-    r.y = max (r1.y , r2.y);
-    if ( r1.x ==  r2.x && r1.y == r2.y && r1.height == r2. height && r1.width ==r2.width){
-      return r1;
-    }else if ( r2.y >= r1.y && (r1.y + r1.height >= r2.y + r2.height)){
+  }
+  if( r1.x ==  r2.x && r1.y == r2.y && r1.height == r2. height && r1.width ==r2.width){
+    //r1==r2
+    return r1;
+  }
+  r.x = max (r1.x , r2.x);
+  r.y = max (r1.y , r2.y);
+    if ( r2.y >= r1.y && (r1.y + r1.height >= r2.y + r2.height)){
       //fully overlapped, r2 smaller   
       r.height = r2.height; 
       //r.height = r2.height - (max (r1.height + r1.y, r2.height + r2.y) - min (r1.height + r1.y, r2.height + r2.y));
@@ -90,8 +93,6 @@ rectangle intersection(rectangle r1, rectangle r2) {
       r.width = r2.x + r2.width - r1.x;
     }
     return r; 
-  }
-  return r1;
 }
 
 //You should not need to modify any code below this line
