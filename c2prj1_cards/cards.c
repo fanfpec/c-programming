@@ -83,6 +83,10 @@ card_t card_from_letters(char value_let, char suit_let) {
     printf("Invalid value input!"); exit(EXIT_FAILURE);
 
   switch( suit_let ){
+  case 'S': temp.suit = SPADES; break;
+  case 'H': temp.suit = HEARTS; break;
+  case 'D': temp.suit = DIAMONDS; break;
+  case 'C': temp.suit = CLUBS; break;
   case 's': temp.suit = SPADES; break;
   case 'h': temp.suit = HEARTS; break;  
   case 'd': temp.suit = DIAMONDS; break;
