@@ -67,17 +67,17 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  if ( value_let == 'J' )
+  if ( value_let == 'J' || value_let == 'j' )
     temp.value = 11;
-  else if ( value_let == 'Q' )
+  else if ( value_let == 'Q' || value_let == 'q' )
     temp.value = 12;
-  else if ( value_let == 'K' )
+  else if ( value_let == 'K' || value_let == 'k' )
     temp.value = 13;
-  else if ( value_let == 'A' )
+  else if ( value_let == 'A' || value_let == 'a' )
     temp.value = 14;
   else if ( value_let == '0' )
     temp.value = 10;
-  else if ( value_let > '0' && value_let < '9' )
+  else if ( value_let > '1' && value_let < '9' )
     temp.value = value_let - '0';
   else
     printf("Invalid value input!"); exit(EXIT_FAILURE);
