@@ -77,7 +77,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.value = 14;
   else if ( value_let == '0' )
     temp.value = 10;
-  else if ( value_let > '1' && value_let < '9' )
+  else if ( value_let > '1' && value_let <= '9' )
     temp.value = value_let - '0';
   else
     printf("Invalid value input!"); exit(EXIT_FAILURE);
