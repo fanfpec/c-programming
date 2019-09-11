@@ -91,7 +91,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'h': temp.suit = HEARTS; break;  
   case 'd': temp.suit = DIAMONDS; break;
   case 'c': temp.suit = CLUBS; break;
-  default: temp.suit = NUM_SUITS;//printf("Invalid suit input!"); exit(EXIT_FAILURE);
+  default: printf("Invalid suit input!"); exit(EXIT_FAILURE);
   }
   
   return temp;
