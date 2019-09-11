@@ -5,7 +5,7 @@
 
 
 void assert_card_valid(card_t c) {
-  assert( c.value >= 2 && c.suit <= VALUE_ACE );
+  assert( c.value >= 2 && c.value <= VALUE_ACE );
   assert( c.suit >= SPADES && c.suit <= CLUBS );
   //return;
 }
@@ -77,13 +77,13 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.value = 14;
   else if ( value_let == '0' )
     temp.value = 10;
-  else if ( value_let > '1' && value_let <= '9' )
+  else if ( value_let >= '2' && value_let <= '9' )
     temp.value = value_let - '0';
   else
-    printf("Invalid value input!"); exit(EXIT_FAILURE);
+    printf("Invalid card value input!"); exit(EXIT_FAILURE);
 
   switch( suit_let ){
-    // case 'S': temp.suit = SPADES; break;
+    //case 'S': temp.suit = SPADES; break;
     //case 'H': temp.suit = HEARTS; break;
     //case 'D': temp.suit = DIAMONDS; break;
     //case 'C': temp.suit = CLUBS; break;
