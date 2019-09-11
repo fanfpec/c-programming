@@ -80,7 +80,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   else if ( value_let > '1' && value_let <= '9' )
     temp.value = value_let - '0';
   else
-    printf("Invalid value input!"); exit(EXIT_FAILURE);
+    printf("Invalid value input!"); return(EXIT_FAILURE);
 
   switch( suit_let ){
     // case 'S': temp.suit = SPADES; break;
@@ -91,7 +91,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'h': temp.suit = HEARTS; break;  
   case 'd': temp.suit = DIAMONDS; break;
   case 'c': temp.suit = CLUBS; break;
-  default: printf("Invalid suit input!"); exit(EXIT_FAILURE);
+  default: printf("Invalid suit input!"); return(EXIT_FAILURE);
   }
   
   return temp;
