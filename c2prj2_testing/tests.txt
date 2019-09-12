@@ -1,2 +1,5 @@
 7s 3s 4s 5s 6s 0d Jc; 8c 2h 3h 4h 5h 6h Qs
-As 3s 4s 5s 6s 0d 7c; 8c 2h 3h 4h 5h 6h Qs
+Ac 3s 4s 5s 6s 0d 7s; 8c 2h 3h 4h 5h 6h Qs
+Ac 3s 4s 5s 6s 0d 3d; 8c 4h 3h 4d Qs 6h Qh
+Kc 3s 4s 5s 6s 0s 7d; 8c 2h 3h 4h 5h 6h 8s
+
