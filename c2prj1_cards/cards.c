@@ -7,7 +7,7 @@
 void assert_card_valid(card_t c) {
   assert( c.value >= 2 && c.value <= VALUE_ACE );
   assert( c.suit >= SPADES && c.suit <= CLUBS );
-  //return;
+  return;
 }
 
 const char * ranking_to_string(hand_ranking_t r) {
@@ -93,7 +93,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'c': temp.suit = CLUBS; break;
   default: printf("Invalid suit input!"); exit(EXIT_FAILURE);
   }
-  
+  assert_card_valid( temp );
   return temp;
 }
 
