@@ -23,7 +23,7 @@ const char * ranking_to_string(hand_ranking_t r) {
   case NOTHING: return "NOTHING";
   default: break;
   }
-  return "";
+  return "?";
 }
 
 char value_letter(card_t c) {
@@ -33,21 +33,23 @@ char value_letter(card_t c) {
     x = c.value + '0';
   else if ( c.value == 10)
     x = '0';
-  else if ( c.value == 11)
+  else if ( c.value == VALUE_JACK)
     x = 'J';//74;
-  else if ( c.value == 12)
+  else if ( c.value == VALUE_QUEEN)
     x = 'Q';//81;
-  else if ( c.value == 13)
+  else if ( c.value == VALUE_KING)
     x = 'K';//75;
-  else if ( c.value == 14)
+  else if ( c.value == VALUE_ACE)
     x = 'A';//65;
+  else
+    x = '?';
   return x;
 }
 
 
 char suit_letter(card_t c) {
   assert_card_valid( c );
-  char x= ' ';
+  char x = '?';
   switch ( c.suit ){
   case SPADES: x = 's'; break;
   case HEARTS: x = 'h'; break;
@@ -68,19 +70,19 @@ void print_card(card_t c) {
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
   if ( value_let == 'J' )//|| value_let == 'j' )
-    temp.value = 11;
+    temp.value = VALUE_JACK;
   else if ( value_let == 'Q' )//|| value_let == 'q' )
-    temp.value = 12;
+    temp.value = VALUE_QUEEN;
   else if ( value_let == 'K' )//|| value_let == 'k' )
-    temp.value = 13;
+    temp.value = VALUE_KING;
   else if ( value_let == 'A' )//|| value_let == 'a' )
-    temp.value = 14;
+    temp.value = VALUE_ACE
   else if ( value_let == '0' )
     temp.value = 10;
   else if ( value_let >= '2' && value_let <= '9' )
     temp.value = value_let - '0';
-  else
-    printf("Invalid card value input!"); exit(EXIT_FAILURE);
+  //else
+  //  printf("Invalid card value input!"); exit(EXIT_FAILURE);
 
   switch( suit_let ){
     //case 'S': temp.suit = SPADES; break;
@@ -91,7 +93,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   case 'h': temp.suit = HEARTS; break;  
   case 'd': temp.suit = DIAMONDS; break;
   case 'c': temp.suit = CLUBS; break;
-  default: printf("Invalid suit input!"); exit(EXIT_FAILURE);
+    //default: printf("Invalid suit input!"); exit(EXIT_FAILURE);
   }
   assert_card_valid( temp );
   return temp;
