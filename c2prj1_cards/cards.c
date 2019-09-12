@@ -47,7 +47,7 @@ char value_letter(card_t c) {
 
 char suit_letter(card_t c) {
   assert_card_valid( c );
-  char x;
+  char x= ' ';
   switch ( c.suit ){
   case SPADES: x = 's'; break;
   case HEARTS: x = 'h'; break;
