@@ -76,7 +76,7 @@ card_t card_from_letters(char value_let, char suit_let) {
   else if ( value_let == 'K' )//|| value_let == 'k' )
     temp.value = VALUE_KING;
   else if ( value_let == 'A' )//|| value_let == 'a' )
-    temp.value = VALUE_ACE
+    temp.value = VALUE_ACE;
   else if ( value_let == '0' )
     temp.value = 10;
   else if ( value_let >= '2' && value_let <= '9' )
