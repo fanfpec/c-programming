@@ -1,17 +1,7 @@
-Grading at Sun Sep 29 19:38:49 UTC 2019
+Grading at Sun Sep 29 20:13:37 UTC 2019
 **Testing broken implementation 10 **
 -------------------------------------
 
-maxSeq({77, 33, 19, 99, 42, 6, 27, 4}, 8) is 
-2
-maxSeq({-3, -42, -99, -1000, -999, -88, -77}, 7) is 
-4
-maxSeq({425, 59, -3, 77, 0, 36}, 6) is 
-2
-maxSeq(NULL, 0) is 
-NULL
-maxSeq({}, 0) is 
-NULL
-Your test program did not identify /usr/local/l2p/subseq/subseq10.o as broken!
+Could not compile test-subseq.c with /usr/local/l2p/subseq/subseq10.o
 
 Overall Grade: FAILED
