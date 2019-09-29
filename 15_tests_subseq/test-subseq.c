@@ -35,15 +35,16 @@ int main(void) {
   int array3[] = { 425, 59, -3, 77, 0, 36}; //2
   int array4[] = { 1,1,2,3,4,10};
   int array5[] = { 1,1,1};
-  //int array6[] = { };
-  doTest (array1, 9);
-  doTest (array2, 7);
-  doTest (array3, 6);
-  doTest (NULL, 0);
-  doTest (array1, 0);
-  doTest (array4, 6);
-  doTest (array4, 5);
-  doTest (array5, 3);
-  doTest (array2, 0);
+  int array6[] = { -9,-8};
+  if( doTest (array1, 9) != 2 ) return EXIT_FAILURE;
+  if( doTest (array2, 7) != 4 ) return EXIT_FAILURE;
+  if( doTest (array3, 6) != 2 ) return EXIT_FAILURE;
+  if( doTest (NULL, 0) != 0 ) return EXIT_FAILURE;
+  if( doTest (array1, 0) != 2 ) return EXIT_FAILURE;
+  if( doTest (array4, 6) != 5 ) return EXIT_FAILURE;
+  if( doTest (array4, 5) != 5 ) return EXIT_FAILURE;
+  if( doTest (array6, 2) != 2 ) return EXIT_FAILURE;
+  //doTest (array5, 3);
+  //doTest (array2, 0);
   return EXIT_SUCCESS;
 }
