@@ -40,7 +40,7 @@ int main(void) {
   doTest (NULL, 0);
   doTest (array1, 0);
   doTest (array4, 5);
-  doTest (array4, 4)
+  doTest (array4, 4);
 
   return EXIT_SUCCESS;
 }
