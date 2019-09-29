@@ -10,7 +10,7 @@ size_t doTest(int * array, size_t n) {
   }
   else {
     printf("{");
-    for (int i =0; i < n; i++) {
+    for (size_t i =0; i < n; i++) {
       printf("%d", array[i]);
       if (i < n -1) {
 	printf(", ");
