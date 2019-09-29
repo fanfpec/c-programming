@@ -44,6 +44,6 @@ int main(void) {
   doTest (array4, 6);
   doTest (array4, 5);
   doTest (array5, 3);
-  //doTest (array6,);
+  doTest (array2, 0);
   return EXIT_SUCCESS;
 }
