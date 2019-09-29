@@ -37,13 +37,13 @@ int main(void) {
   int array5[] = { 1,1,1};
   //int array6[] = { -9,-8};
   if( doTest (array1, 9) != 2 ) return EXIT_FAILURE;
-  if( doTest (array2, 7) != 4 ) return EXIT_FAILURE;
-  if( doTest (array3, 6) != 2 ) return EXIT_FAILURE;
+  if( doTest (array2, 0) != 4 ) return EXIT_FAILURE;
+  //if( doTest (array3, 6) != 2 ) return EXIT_FAILURE;
   if( doTest (NULL, 0) != 0 ) return EXIT_FAILURE;
   if( doTest (array1, 0) != 2 ) return EXIT_FAILURE;
   //if( doTest (array4, 6) != 5 ) return EXIT_FAILURE;
   //if( doTest (array4, 5) != 5 ) return EXIT_FAILURE;
-  if( doTest (array5, 3) != 1 ) return EXIT_FAILURE;
+  //if( doTest (array5, 3) != 1 ) return EXIT_FAILURE;
   //if( doTest (array6, 2) != 2 ) return EXIT_FAILURE;
   //doTest (array2, 0);
   return EXIT_SUCCESS;
