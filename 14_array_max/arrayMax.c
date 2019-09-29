@@ -4,11 +4,11 @@
 int * arrayMax(int * array, int n) {
   if (n != 0){
     //int Max_ind = 0;
-    int Max = array[0];
+    int * Max = array;
     for (int i = 1; i < n ; i++){
       if (array[i] > Max){
 	//Max_ind = i;
-	Max = array[i];
+	Max ++;
       }
     }
       
