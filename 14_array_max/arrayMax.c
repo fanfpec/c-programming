@@ -6,7 +6,7 @@ int * arrayMax(int * array, int n) {
     //int Max_ind = 0;
     int * Max = array;
     for (int i = 1; i < n ; i++){
-      if (array[i] > Max){
+      if (array[i] > *Max){
 	//Max_ind = i;
 	Max ++;
       }
