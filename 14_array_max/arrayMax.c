@@ -13,8 +13,9 @@ int * arrayMax(int * array, int n) {
     }
       
     return Max;
-      }
-  return NULL;
+  }
+  else
+    return NULL;
 }
 
 void doTest(int * array, int n) {
