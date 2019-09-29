@@ -33,12 +33,14 @@ int main(void) {
   int array1[] = { 77, 33, 19, 99, 42, 6, 27, 4}; //2
   int array2[] = { -3, -42, -99, -1000, -999, -88, -77}; //4
   int array3[] = { 425, 59, -3, 77, 0, 36}; //2
-
+  int array4[] = { 1,1,2,3,4}
   doTest (array1, 8);
   doTest (array2, 7);
   doTest (array3, 6);
   doTest (NULL, 0);
   doTest (array1, 0);
+  doTest (array4, 5);
+  doTest (array4, 4)
 
   return EXIT_SUCCESS;
 }
