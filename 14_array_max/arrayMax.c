@@ -4,7 +4,7 @@
 int * arrayMax(int * array, int n) {
   if (n != 0){
     //int Max_ind = 0;
-    int Max = arrary[0];
+    int Max = array[0];
     for (int i = 1; i < n ; i++){
       if (array[i] > Max){
 	//Max_ind = i;
