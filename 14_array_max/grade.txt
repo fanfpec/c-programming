@@ -1,0 +1,14 @@
+Grading at Sun Sep 29 17:15:30 UTC 2019
+Attempting to compile arrayMax.c 
+arrayMax.c: In function ‘arrayMax’:
+arrayMax.c:7:15: error: ‘arrary’ undeclared (first use in this function)
+     int Max = arrary[0];
+               ^
+arrayMax.c:7:15: note: each undeclared identifier is reported only once for each function it appears in
+arrayMax.c:15:12: error: return makes pointer from integer without a cast [-Werror=int-conversion]
+     return Max;
+            ^
+cc1: all warnings being treated as errors
+The code did not compile!
+
+Overall Grade: F
