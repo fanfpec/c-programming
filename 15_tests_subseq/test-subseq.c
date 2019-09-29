@@ -34,7 +34,7 @@ int main(void) {
   int array2[] = { -3, -42, -99, -1000, -999, -88, -77}; //4
   int array3[] = { 425, 59, -3, 77, 0, 36}; //2
   int array4[] = { 1,1,2,3,4,10};
-  int array5[] = ( 1,1,1);
+  int array5[] = { 1,1,1};
   //int array6[] = { };
   doTest (array1, 9);
   doTest (array2, 7);
