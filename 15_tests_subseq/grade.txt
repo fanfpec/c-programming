@@ -1,4 +1,4 @@
-Grading at Mon Sep 30 16:44:44 UTC 2019
+Grading at Mon Sep 30 16:50:49 UTC 2019
 **Testing broken implementation 10 **
 -------------------------------------
 
@@ -64,8 +64,8 @@ maxSeq(NULL, 0) is
 NULL
 maxSeq({1, 1, 2, 3, 4, 10}, 6) is 
 5
-maxSeq({1, 1, 2, 3, 4}, 5) is 
-4
+maxSeq({1, 1, 1, -1, -5}, 5) is 
+NULL
 
 **Testing broken implementation 7 **
 -------------------------------------
@@ -96,8 +96,9 @@ maxSeq(NULL, 0) is
 NULL
 maxSeq({1, 1, 2, 3, 4, 10}, 6) is 
 5
-maxSeq({1, 1, 2, 3, 4}, 5) is 
-4
-Your test program falsely failed the correct implementation!
+maxSeq({1, 1, 1, -1, -5}, 5) is 
+1
 
-Overall Grade: FAILED
+All test programs were handled correctly
+
+Overall Grade: PASSED
