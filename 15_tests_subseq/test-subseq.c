@@ -20,7 +20,7 @@ size_t doTest(int * array, size_t n) {
   }
   printf(", %zu) is \n", n);
   size_t len = maxSeq (array, n);
-  if (len == NULL) {
+  if (len == 0) {
     printf("NULL\n");
   }
   else {
