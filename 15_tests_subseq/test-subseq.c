@@ -18,7 +18,7 @@ size_t doTest(int * array, size_t n) {
     }
     printf("}");
   }
-  printf(", %d) is \n", n);
+  printf(", %zu) is \n", n);
   size_t len = maxSeq (array, n);
   if (len == NULL) {
     printf("NULL\n");
