@@ -24,7 +24,7 @@ size_t doTest(int * array, size_t n) {
     printf("NULL\n");
   }
   else {
-    printf("%d\n", len);
+    printf("%zu\n", len);
   }
   return len;
 }
