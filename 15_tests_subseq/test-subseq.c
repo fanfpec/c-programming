@@ -35,7 +35,6 @@ int main(void) {
   //int array3[] = { 425, 59, -3, 77, 0, 36}; //2
   int array4[] = { 1,1,2,3,4,10};
   int array5[] = { 1,1,1,-1,-5};
-  //int array6[] = { -9,-8};
   if( doTest (array1, 9) != 2 ) return EXIT_FAILURE;
   if( doTest (array2, 8) != 5 ) return EXIT_FAILURE;
   //if( doTest (array3, 6) != 2 ) return EXIT_FAILURE;
@@ -44,7 +43,5 @@ int main(void) {
   if( doTest (array4, 6) != 5 ) return EXIT_FAILURE;
   //if( doTest (array4, 5) != 5 ) return EXIT_FAILURE;
   if( doTest (array5, 5) != 1 ) return EXIT_FAILURE;
-  //if( doTest (array6, 2) != 2 ) return EXIT_FAILURE;
-  //doTest (array2, 0);
   return EXIT_SUCCESS;
 }
