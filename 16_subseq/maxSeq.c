@@ -3,7 +3,7 @@
 
 size_t maxSeq(int * array, size_t n){
   if ( n == 0){
-    return NULL;
+    return 0;
   }
   //int smaller_ele = array[0]; 
   size_t len = 1;
@@ -16,7 +16,7 @@ size_t maxSeq(int * array, size_t n){
       len_temp = 1;
     }
     if (len < len_temp)
-      len = len_temp
+      len = len_temp;
   }
   return len;
 }
