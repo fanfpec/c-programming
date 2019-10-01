@@ -20,7 +20,9 @@ void reverse(char * str) {
     p[j]='\0';
     //printf("%s\n", p);
     strncpy(str,p,n+1);
+    return;
   }
+  return;
 }
 
 int main(void) {
