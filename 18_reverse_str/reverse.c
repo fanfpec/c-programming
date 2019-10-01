@@ -4,7 +4,7 @@
 
 void reverse(char * str) {
   //WRITE ME!
-  size_t n = 0;
+  int n = 0; //to store the length of str
   while (str[n] != '\0'){
     n++;
   } //n : \0 excluded
@@ -12,12 +12,14 @@ void reverse(char * str) {
     char p[n+1];
     //strncpy( p, str, n+1);
     int j = 0;
-    for ( size_t i = n-1; i >= 0; i--){
+    for ( int i = n-1; i >= 0; i--){
       p[j] = str[i];
       j++;
+      //printf("%c",p[j]);
     }
     p[j]='\0';
-    str = p;
+    //printf("%s\n", p);
+    strncpy(str,p,n+1);
   }
 }
 
