@@ -3,14 +3,15 @@
 #include <string.h>
 
 void reverse(char * str) {
-  //WRITE ME!
+  //check NULL pointer first!!!
   if (str == NULL)
     return;
+  
   int n = 0; //to store the length of str
   while (str[n] != '\0'){
     n++;
   } //n : \0 excluded
-  if (n != 0){
+  if( n != 0 ){
     char p[n+1];
     //strncpy( p, str, n+1);
     int j = 0;
