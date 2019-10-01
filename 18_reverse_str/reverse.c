@@ -9,14 +9,15 @@ void reverse(char * str) {
     n++;
   } //n : \0 excluded
   if (n != 0){
-    char * p = str;
-    p = strncpy( p, str, n+1);
+    char p[n+1];
+    //strncpy( p, str, n+1);
     int j = 0;
     for ( size_t i = n-1; i >= 0; i--){
-      str[j] = p[i];
+      p[j] = str[i];
       j++;
     }
-    str[j]='\0';
+    p[j]='\0';
+    str = p;
   }
 }
 
