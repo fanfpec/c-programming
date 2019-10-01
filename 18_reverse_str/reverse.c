@@ -4,6 +4,20 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  size_t n = 0;
+  while (str[n] != '\0'){
+    n++;
+  } //n : \0 excluded
+  if (n != 0){
+    char * p = str;
+    p = strncpy( p, str, n+1);
+    int j = 0;
+    for ( size_t i = n-1; i >= 0; i--){
+      str[j] = p[i];
+      j++;
+    }
+    str[j]='\0';
+  }
 }
 
 int main(void) {
