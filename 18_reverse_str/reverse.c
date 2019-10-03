@@ -7,13 +7,13 @@ void reverse(char * str) {
   if (str == NULL)
     return;
   
-  int n = 0; //to store the length of str
+  int n = 0; //n stores the length of str
   while (str[n] != '\0'){
     n++;
-  } //n : \0 excluded
+  } //n : '\0' excluded
+
   if( n != 0 ){
     char p[n+1];
-    //strncpy( p, str, n+1);
     int j = 0;
     for ( int i = n-1; i >= 0; i--){
       p[j] = str[i];
@@ -22,7 +22,7 @@ void reverse(char * str) {
     }
     p[j]='\0';
     //printf("%s\n", p);
-    strncpy(str,p,n+1);
+    strncpy(str,p,n+1); //returns a pointer 
     return;
   }
   return;
