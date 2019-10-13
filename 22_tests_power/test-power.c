@@ -3,7 +3,7 @@
 
 unsigned power(unsigned x, unsigned y);
 
-void doTest(unsigned x, unsigned y, unsighed ans){
+void doTest(unsigned x, unsigned y, unsigned ans){
   if ( power( x, y ) == ans ){
     exit(EXIT_SUCCESS);
   }
