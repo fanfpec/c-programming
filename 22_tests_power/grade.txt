@@ -1,27 +1,27 @@
-Grading at Sun Oct 13 18:17:46 UTC 2019
+Grading at Tue Oct 15 01:44:13 UTC 2019
 **Testing broken implementation 10 **
 -------------------------------------
 
-1 to the 2-the power is: 1
-while the correct answer is: 2
+2 to the 3-the power is: 2
+while the correct answer is: 8
 
 **Testing broken implementation 11 **
 -------------------------------------
 
-1 to the 2-the power is: 1
-while the correct answer is: 2
+-1 to the 1-the power is: 7
+while the correct answer is: -1
 
 **Testing broken implementation 1 **
 -------------------------------------
 
-0 to the 1-the power is: 1
-while the correct answer is: 0
+2 to the 3-the power is: 2
+while the correct answer is: 8
 
 **Testing broken implementation 2 **
 -------------------------------------
 
-0 to the 1-the power is: 1
-while the correct answer is: 0
+2 to the 3-the power is: 9
+while the correct answer is: 8
 
 **Testing broken implementation 3 **
 -------------------------------------
@@ -32,14 +32,14 @@ while the correct answer is: 1
 **Testing broken implementation 4 **
 -------------------------------------
 
-1 to the 2-the power is: 1
-while the correct answer is: 2
+-1 to the 1-the power is: 65535
+while the correct answer is: -1
 
 **Testing broken implementation 5 **
 -------------------------------------
 
-1 to the 2-the power is: 0
-while the correct answer is: 2
+2 to the 3-the power is: 0
+while the correct answer is: 8
 
 **Testing broken implementation 6 **
 -------------------------------------
@@ -50,12 +50,26 @@ while the correct answer is: 0
 **Testing broken implementation 7 **
 -------------------------------------
 
-0 to the 1-the power is: 3
-while the correct answer is: 0
+2 to the 3-the power is: 27
+while the correct answer is: 8
 
 **Testing broken implementation 8 **
 -------------------------------------
 
-Your test program did not identify /usr/local/l2p/power/power8.o as broken!
+2 to the 3-the power is: 6
+while the correct answer is: 8
 
-Overall Grade: FAILED
+**Testing broken implementation 9 **
+-------------------------------------
+
+2 to the 3-the power is: 0
+while the correct answer is: 8
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
