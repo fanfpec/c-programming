@@ -13,10 +13,12 @@ void doTest(unsigned x, unsigned y, unsigned ans){
 }
 
 int main(void){
-  doTest( 0, 0, 1);
-  //doTest( 1, 0, 1);
-  doTest( 0, 1, 0);
-  doTest( 1.5, 2, 2.25);
-  doTest( 2, 0, 1);
+  doTest( 0, 0, 1); //3
+  doTest( 2, 3, 8); //10,2,5,8,9
+  doTest( 0, 1, 0); //1,2,6,7
+  doTest( 4294967295, 1, 4294967295);
+  //doTest( 1.5, 2, 2.25);
+  //doTest( 2, 1, 2);
+  //doTest( 2, 3, 8); //10
   return EXIT_SUCCESS;
 }
